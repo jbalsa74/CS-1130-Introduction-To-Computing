@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Conversion - Calculator.io</title>
 
-  <!-- Google Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Night+Pumpkin&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -19,7 +18,6 @@
       color: black;
     }
 
-    /* Header and Navigation */
     .Logo {
       background-color: turquoise;
       padding: 10px;
@@ -78,7 +76,6 @@
       background-color: #03566d;
     }
 
-    /* Main content */
     main {
       padding: 20px;
       text-align: center;
@@ -129,7 +126,6 @@
       color: black;
     }
 
-    /* Calculator box */
     .transparent-box {
       background-color: #ffffff;
       padding: 20px;
@@ -149,25 +145,38 @@
       margin: 10px 0;
     }
 
+    .home-btn {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 1.5em;
+      color: #03566d;
+      text-decoration: none;
+      background-color: #fff;
+      border: 2px solid #03566d;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .home-btn:hover {
+      background-color: #03566d;
+      color: white;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- Logo Section -->
   <div class="Logo"><h2>Welcome to My Website</h2></div>
 
-  <!-- Navigation Bar -->
   <div class="nav_menu">
     <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
     <a href="conversion.html" class="active">Conversion</a>
     <a href="tax.html">Income Tax</a>
-    <a href="factorial.html">Finding Nth Factorial</a>
+    <a href="factorial.html">Factorial Calculator</a>
     <a href="payroll.html">Simple Payroll</a>
     <a href="about.html" class="split">About</a>
   </div>
 
-  <!-- Main Content Section -->
   <main>
     <h1>Conversion</h1>
 
@@ -186,20 +195,16 @@
       <input type="text" id="inV" placeholder="Enter the value">
 
       <button class="btn" onclick="convert()">Convert</button>
-
       <br><br>
     </div>
 
-    <!-- Result Display -->
-    <div class="transparent-box">
-      <h3 id="result"></h3>
-    </div>
+    <a href="index.html" class="home-btn">
+      <i class="fa fa-home"></i> Go to Home
+    </a>
   </main>
 
-  <!-- Footer Section -->
   <footer>
     <p>@Jbalsa</p>
-    <i class="fa fa-fw fa-facebook"></i>
   </footer>
 
   <script>
@@ -219,7 +224,6 @@
       lastScrollTop = st;
     });
 
-    // Conversion function
     function convert() {
       var typeconv = document.getElementById("typeconv").value;
       var inV = parseFloat(document.getElementById("inV").value);

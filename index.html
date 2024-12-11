@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to My Website</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Night+Pumpkin&display=swap"> <!-- Updated Font -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css"> <!-- Externalized CSS -->
+  <style>
+    /* Body and Background Color */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Night Pumpkin', sans-serif;
+      background-color: white; /* Background color */
+      color: black; /* Text color */
+    }
+
+    /* Header */
+    .Logo {
+      background-color: #d6aad6; /* Soft lavender background */
+      padding: 10px;
+      text-align: center;
+      color: black;
+      font-family: 'Night Pumpkin', sans-serif;
+      font-size: 2.5em;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 7px;
+      border-radius: 10px;
+    }
+
+    /* Navigation Menu */
+    .nav_menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #d6aad6; /* Soft lavender background */
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      padding: 10px;
+      gap: 20px;
+    }
+
+    .nav_menu a {
+      display: block;
+      color: black;
+      text-align: center;
+      text-decoration: none;
+      font-family: "Open Sans", sans-serif;
+      padding: 10px 20px;
+      border-radius: 10px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav_menu a:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+      color: black;
+    }
+
+    .nav_menu a.split {
+      background-color: #000;
+      color: white;
+    }
+
+    .nav_menu a.split:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .nav_menu a.active {
+      color: #bfddf1;
+      font-weight: bold;
+    }
+
+    .active {
+      background-color: #03566d;
+    }
+
+    /* Main Content */
+    main {
+      flex: 1;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.2em;
+      background-color: white;
+      color: black;
+      border-radius: 15px;
+    }
+
+    .container {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Section Overlay */
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+      top: 0;
+      transition: 0.3s ease-in-out;
+    }
+
+    .overlay:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .overlay .text {
+      font-size: 1.5em;
+      color: #03566d;
+    }
+
+    .overlay .description {
+      font-size: 1em;
+      color: #444;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #d6aad6; /* Soft lavender background */
+      padding: 10px 0;
+      text-align: center;
+      color: black;
+      border-radius: 10px;
+    }
+
+    footer i {
+      color: black;
+      margin: 0 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="Logo"><h2>Welcome to my website</h2></div> <!-- Changed title text -->
+  </header>
+
+  <nav class="nav_menu">
+    <a class="active" href="index.html"><i class="fa fa-fw fa-home" style="color: white;"></i></a>
+    <a href="conversion.html">Conversion</a>
+    <a href="tax.html">Income Tax</a>
+    <a href="factorial.html">Factorial Calculator</a> <!-- Updated link -->
+    <a href="payroll.html">Simple Payroll</a>
+    <a href="about.html" class="split">About</a>
+  </nav>
+
+  <main>
+    <!-- Conversion section -->
+    <section id="conversion_img">
+      <div class="container">
+        <a href="conversion.html">
+          <div class="overlay">
+            <div class="text">Conversion Calculator</div>
+            <div class="description">Converts between fahrenheit-celsius and feet-meters, vice versa.</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Tax section -->
+    <section id="tax_img">
+      <div class="container">
+        <a href="tax.html">
+          <div class="overlay">
+            <div class="text">Income Tax</div>
+            <div class="description">Calculates income tax based on income.</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Factorial section -->
+    <section id="factorial_img">
+      <div class="container">
+        <a href="factorial.html">
+          <div class="overlay">
+            <div class="text">Factorial Calculator</div> <!-- Updated text -->
+            <div class="description">Calculates the factorial, average, and sum of the first natural numbers.</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Payroll section -->
+    <section id="payroll_img">
+      <div class="container">
+        <a href="payroll.html">
+          <div class="overlay">
+            <div class="text">Simple Payroll</div>
+            <div class="description">Calculates payroll based on days worked and daily rate.</div>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>@Jbalsa</p> <!-- Footer text -->
+    <i class="fa fa-fw fa-facebook"></i>
+    <i class="fa fa-fw fa-instagram"></i>
+    <i class="fa fa-fw fa-twitter"></i>
+    <i class="fa fa-fw fa-github"></i>
+  </footer>
+
+  <script src="script.js"></script> <!-- Externalized JS -->
+
+</body>
+
+</html>

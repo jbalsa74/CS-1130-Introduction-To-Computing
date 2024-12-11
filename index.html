@@ -4,23 +4,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to My Website</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Night+Pumpkin&display=swap"> <!-- Updated Font -->
+  <title>Introduction to Computing</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Night+Pumpkin&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="styles.css"> <!-- Externalized CSS -->
+  <link rel="stylesheet" href="styles.css">
   <style>
-    /* Body and Background Color */
     body {
       margin: 0;
       padding: 0;
       font-family: 'Night Pumpkin', sans-serif;
-      background-color: white; /* Background color */
-      color: black; /* Text color */
+      background-color: turquoise;
+      color: black;
     }
 
-    /* Header */
     .Logo {
-      background-color: #d6aad6; /* Soft lavender background */
+      background-color: turquoise;
       padding: 10px;
       text-align: center;
       color: black;
@@ -32,12 +30,11 @@
       border-radius: 10px;
     }
 
-    /* Navigation Menu */
     .nav_menu {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #d6aad6; /* Soft lavender background */
+      background-color: turquoise;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
       border-radius: 15px;
       padding: 10px;
@@ -78,13 +75,12 @@
       background-color: #03566d;
     }
 
-    /* Main Content */
     main {
       flex: 1;
       padding: 20px;
       text-align: center;
       font-size: 1.2em;
-      background-color: white;
+      background-color: turquoise;
       color: black;
       border-radius: 15px;
     }
@@ -98,7 +94,6 @@
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
 
-    /* Section Overlay */
     .overlay {
       background-color: rgba(255, 255, 255, 0.7);
       padding: 10px;
@@ -118,18 +113,18 @@
       color: #03566d;
     }
 
-    .overlay .description {
-      font-size: 1em;
-      color: #444;
-    }
-
-    /* Footer */
     footer {
-      background-color: #d6aad6; /* Soft lavender background */
+      background-color: turquoise;
       padding: 10px 0;
       text-align: center;
       color: black;
       border-radius: 10px;
+    }
+
+    footer p {
+      color: black;
+      font-size: 1.2em;
+      font-weight: bold;
     }
 
     footer i {
@@ -143,62 +138,54 @@
 <body>
 
   <header>
-    <div class="Logo"><h2>Welcome to my website</h2></div> <!-- Changed title text -->
+    <div class="Logo"><h2>INTRODUCTION TO COMPUTING</h2></div>
   </header>
 
   <nav class="nav_menu">
     <a class="active" href="index.html"><i class="fa fa-fw fa-home" style="color: white;"></i></a>
     <a href="conversion.html">Conversion</a>
     <a href="tax.html">Income Tax</a>
-    <a href="factorial.html">Factorial Calculator</a> <!-- Updated link -->
+    <a href="factorial.html">Factorial Calculator</a>
     <a href="payroll.html">Simple Payroll</a>
     <a href="about.html" class="split">About</a>
   </nav>
 
   <main>
-    <!-- Conversion section -->
     <section id="conversion_img">
       <div class="container">
         <a href="conversion.html">
           <div class="overlay">
             <div class="text">Conversion Calculator</div>
-            <div class="description">Converts between fahrenheit-celsius and feet-meters, vice versa.</div>
           </div>
         </a>
       </div>
     </section>
 
-    <!-- Tax section -->
     <section id="tax_img">
       <div class="container">
         <a href="tax.html">
           <div class="overlay">
             <div class="text">Income Tax</div>
-            <div class="description">Calculates income tax based on income.</div>
           </div>
         </a>
       </div>
     </section>
 
-    <!-- Factorial section -->
     <section id="factorial_img">
       <div class="container">
         <a href="factorial.html">
           <div class="overlay">
-            <div class="text">Factorial Calculator</div> <!-- Updated text -->
-            <div class="description">Calculates the factorial, average, and sum of the first natural numbers.</div>
+            <div class="text">Factorial Calculator</div>
           </div>
         </a>
       </div>
     </section>
 
-    <!-- Payroll section -->
     <section id="payroll_img">
       <div class="container">
         <a href="payroll.html">
           <div class="overlay">
             <div class="text">Simple Payroll</div>
-            <div class="description">Calculates payroll based on days worked and daily rate.</div>
           </div>
         </a>
       </div>
@@ -206,14 +193,10 @@
   </main>
 
   <footer>
-    <p>@Jbalsa</p> <!-- Footer text -->
-    <i class="fa fa-fw fa-facebook"></i>
-    <i class="fa fa-fw fa-instagram"></i>
-    <i class="fa fa-fw fa-twitter"></i>
-    <i class="fa fa-fw fa-github"></i>
+    <p>@Jbalsa</p>
   </footer>
 
-  <script src="script.js"></script> <!-- Externalized JS -->
+  <script src="script.js"></script>
 
 </body>
 

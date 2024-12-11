@@ -6,46 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome to My Website</title>  
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Night+Pumpkin&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Night Pumpkin', sans-serif;
-      background-color: white;
+      background-color: turquoise;
       color: black;
-    }
-
-    @media (max-width: 600px) {
-      header, main, footer {
-        padding: 10px;
-      }
-    }
-
-    @media (min-width: 601px) and (max-width: 1200px) {
-      header, main, footer {
-        padding: 10px;
-      }
-    }
-
-    @media (min-width: 1201px) {
-      header, main, footer {
-        padding: 10px;
-      }
     }
 
     .Logo {
-      background-color: #d6aad6;
-      padding: 8px 12px;
+      background-color: turquoise;
+      padding: 10px;
       text-align: center;
       color: black;
       font-family: 'Night Pumpkin', sans-serif;
-      font-size: 2em;
+      font-size: 2.5em;
       margin: 0;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 7px;
       border-radius: 10px;
     }
 
@@ -53,11 +35,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #d6aad6;
+      background-color: turquoise;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
       border-radius: 15px;
-      padding: 5px 10px;
-      gap: 10px;
+      padding: 10px;
+      gap: 20px;
     }
 
     .nav_menu a {
@@ -66,7 +48,7 @@
       text-align: center;
       text-decoration: none;
       font-family: "Open Sans", sans-serif;
-      padding: 6px 12px;
+      padding: 10px 20px;
       border-radius: 10px;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
@@ -96,9 +78,9 @@
 
     main {
       flex: 1;
-      padding: 10px;
+      padding: 20px;
       text-align: center;
-      font-size: 1.1em;
+      font-size: 1.2em;
       background-color: white;
       color: black;
       border-radius: 15px;
@@ -123,7 +105,7 @@
       border-radius: 5px;
       border: none;
       cursor: pointer;
-      font-size: 0.9em;
+      font-size: 1em;
       font-family: 'Montserrat', sans-serif;
     }
 
@@ -132,8 +114,8 @@
     }
 
     footer {
-      background-color: #d6aad6;
-      padding: 5px 0;
+      background-color: turquoise;
+      padding: 10px 0;
       text-align: center;
       color: black;
       border-radius: 10px;
@@ -166,23 +148,25 @@
 
 <body>
 
-  <div class="Logo"><h2>Welcome to my website</h2></div>
+  <header>
+    <div class="Logo"><h2>WELCOME TO MY WEBSITE</h2></div>
+  </header>
 
-  <div class="nav_menu" id="nav_menu">
-    <a class="active" href="index.html"><i class="fa fa-fw fa-home" style="color: black;"></i> Home</a>
+  <nav class="nav_menu">
+    <a class="active" href="index.html"><i class="fa fa-fw fa-home" style="color: white;"></i> Home</a>
     <a href="conversion.html">Conversion</a>
     <a href="tax.html">Income Tax</a>
     <a href="factorial.html">Finding Nth Factorial</a>
     <a href="payroll.html">Simple Payroll</a>
     <a href="about.html" class="split">About</a>
-  </div>
+  </nav>
 
   <main>
     <div class="about-me">
       <div class="about-me-frame">
         <h1>About Me</h1>
         <p>Welcome to my website! I'm Joel Patrick Balsa, a 1st-year Computer Science student. I’m passionate about software development and love creating useful tools and applications. Feel free to explore and try out the different calculators and tools available here.</p>
-        <button onclick="window.location.href='index.html'">Go to Home Page</button>
+        <button class="btn" onclick="window.location.href='index.html'">Go to Home Page</button>
       </div>
     </div>
   </main>

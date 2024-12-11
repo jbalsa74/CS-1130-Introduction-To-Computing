@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Income Tax Calculator</title>
+  <title>Welcome to My Website</title>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Night+Pumpkin&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -163,30 +163,20 @@
 
 <body>
 
-  <div class="Logo">Income Tax Calculator</div>
+  <div class="Logo">Welcome to My Website</div>
 
   <div class="nav_menu">
     <a href="index.html"><i class="fa fa-fw fa-home" style="color: black;"></i> Home</a>
     <a href="conversion.html">Conversion</a>
-    <a href="tax.html" class="active">Income Tax</a>
+    <a href="tax.html">Income Tax</a>
     <a href="factorial.html">Factorial Calculator</a>
     <a href="payroll.html">Simple Payroll</a>
     <a href="about.html">About</a>
   </div>
 
   <div class="container">
-    <h1>Income Tax Calculator</h1>
-    <form id="incomeTaxForm">
-      <div class="form-group">
-        <label for="income">Enter Your Annual Income:</label>
-        <input type="number" id="income" name="income" required>
-      </div>
-      <button type="button" onclick="calculateTax()">Calculate Tax</button>
-    </form>
-
-    <div id="result" class="result" style="display: none;">
-      <p id="taxMessage"></p>
-    </div>
+    <h1>Welcome to My Website</h1>
+    <p>This is a place where you can find various tools and resources. Use the navigation menu above to explore the features!</p>
 
     <a href="index.html" class="home-btn">
       <i class="fa fa-home"></i> Go to Home Page
@@ -196,41 +186,6 @@
   <footer>
     <p>@Jbalsa</p>
   </footer>
-
-  <script>
-    function calculateTax() {
-      const income = parseFloat(document.getElementById('income').value);
-
-      if (income <= 0 || isNaN(income)) {
-        alert("Please enter a valid, positive income.");
-        return;
-      }
-
-      let tax = 0;
-      let taxMessage = '';
-
-      if (income <= 250000) {
-        taxMessage = `Your income is ${income.toLocaleString()}. You don't pay any tax.`;
-      } else {
-        if (income <= 400000) {
-          tax = (income - 250000) * 0.2;
-        } else if (income <= 800000) {
-          tax = (income - 400000) * 0.25 + 30000;
-        } else if (income <= 2000000) {
-          tax = (income - 800000) * 0.3 + 130000;
-        } else if (income <= 8000000) {
-          tax = (income - 2000000) * 0.32 + 490000;
-        } else {
-          tax = (income - 8000000) * 0.35 + 2410000;
-        }
-
-        taxMessage = `Your income is ${income.toLocaleString()}. Tax to pay: ${tax.toLocaleString()}`;
-      }
-
-      document.getElementById('taxMessage').innerHTML = taxMessage;
-      document.getElementById('result').style.display = 'block';
-    }
-  </script>
 
 </body>
 

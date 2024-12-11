@@ -4,64 +4,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conversion - Calculator.io</title>  
+  <title>Conversion - Calculator.io</title>
 
-  <!-- Add a link to the Montserrat font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
+  <!-- Google Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Night+Pumpkin&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Night Pumpkin', sans-serif;
-      background-color: white;
+      background-color: turquoise;
       color: black;
     }
 
-    /* Media queries */
-    @media (max-width: 600px) {
-      header, main, footer {
-        padding: 10px;
-      }
-    }
-
-    @media (min-width: 601px) and (max-width: 1200px) {
-      header, main, footer {
-        padding: 15px;
-      }
-    }
-
-    @media (min-width: 1201px) {
-      header, main, footer {
-        padding: 20px;
-      }
-    }
-
-    /* Header */
+    /* Header and Navigation */
     .Logo {
-      background-color: #d6aad6;
-      padding: 8px 10px;
+      background-color: turquoise;
+      padding: 10px;
       text-align: center;
       color: black;
       font-family: 'Night Pumpkin', sans-serif;
-      font-size: 2em;
+      font-size: 2.5em;
       margin: 0;
       text-transform: uppercase;
-      letter-spacing: 5px;
+      letter-spacing: 7px;
       border-radius: 10px;
     }
 
-    /* Navigation menu */
     .nav_menu {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #d6aad6;
+      background-color: turquoise;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
       border-radius: 15px;
-      padding: 8px 10px;
-      gap: 15px;
+      padding: 10px;
+      gap: 20px;
     }
 
     .nav_menu a {
@@ -70,7 +50,7 @@
       text-align: center;
       text-decoration: none;
       font-family: "Open Sans", sans-serif;
-      padding: 8px 15px;
+      padding: 10px 20px;
       border-radius: 10px;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
@@ -100,13 +80,14 @@
 
     /* Main content */
     main {
-      flex: 1;
-      padding: 10px;
+      padding: 20px;
       text-align: center;
-      font-size: 1.1em;
+      font-size: 1.2em;
       background-color: white;
       color: black;
       border-radius: 15px;
+      margin: 20px auto;
+      width: 80%;
     }
 
     h1 {
@@ -137,8 +118,8 @@
     }
 
     footer {
-      background-color: #d6aad6;
-      padding: 8px 0;
+      background-color: turquoise;
+      padding: 10px 0;
       text-align: center;
       color: black;
       border-radius: 10px;
@@ -151,9 +132,9 @@
     /* Calculator box */
     .transparent-box {
       background-color: #ffffff;
-      padding: 15px;
-      width: 40%;
-      margin: 10px auto;
+      padding: 20px;
+      width: 50%;
+      margin: 20px auto;
       text-align: center;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
       border-radius: 15px;
@@ -163,18 +144,20 @@
     input {
       padding: 8px;
       border-radius: 5px;
-      width: 50%;
+      width: 60%;
       font-size: 1em;
-      margin: 8px 0;
+      margin: 10px 0;
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- Updated Logo Text -->
+  <!-- Logo Section -->
   <div class="Logo"><h2>Welcome to My Website</h2></div>
 
+  <!-- Navigation Bar -->
   <div class="nav_menu">
     <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
     <a href="conversion.html" class="active">Conversion</a>
@@ -184,8 +167,10 @@
     <a href="about.html" class="split">About</a>
   </div>
 
+  <!-- Main Content Section -->
   <main>
     <h1>Conversion</h1>
+
     <div class="transparent-box">
       <label class="custom" for="typeconv">Please select Conversion Type:</label>
       <select id="typeconv">
@@ -194,17 +179,24 @@
         <option value="MetoFe">Meters to Feet</option>
         <option value="FetoMe">Feet to Meters</option>
       </select>
+
       <br>
+
       <label class="custom" for="inV">Enter a value:</label>
       <input type="text" id="inV" placeholder="Enter the value">
+
       <button class="btn" onclick="convert()">Convert</button>
+
       <br><br>
     </div>
+
+    <!-- Result Display -->
     <div class="transparent-box">
       <h3 id="result"></h3>
     </div>
   </main>
 
+  <!-- Footer Section -->
   <footer>
     <p>@Jbalsa</p>
     <i class="fa fa-fw fa-facebook"></i>
@@ -227,10 +219,11 @@
       lastScrollTop = st;
     });
 
+    // Conversion function
     function convert() {
       var typeconv = document.getElementById("typeconv").value;
       var inV = parseFloat(document.getElementById("inV").value);
-      
+
       if (isNaN(inV)) {
         alert("Please enter a valid number for conversion.");
         return;

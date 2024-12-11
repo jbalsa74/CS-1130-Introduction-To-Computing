@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Factorial Calculator</title>
+  <title>Welcome to My Website</title>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Night+Pumpkin&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,10 +13,15 @@
     body {
       margin: 0;
       padding: 0;
-      min-height: 100vh;
       font-family: 'Night Pumpkin', sans-serif;
       background-color: turquoise;
       color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      box-sizing: border-box;
     }
 
     .Logo {
@@ -24,7 +29,6 @@
       padding: 10px;
       text-align: center;
       color: black;
-      font-family: 'Night Pumpkin', sans-serif;
       font-size: 2.5em;
       margin: 0;
       text-transform: uppercase;
@@ -40,6 +44,7 @@
       background-color: turquoise;
       border-radius: 15px;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
     }
 
     .nav_menu a {
@@ -61,69 +66,56 @@
     }
 
     main {
+      width: 100%;
+      max-width: 400px;
       padding: 20px;
-      text-align: center;
-      font-size: 1.2em;
       background-color: white;
       color: black;
       border-radius: 15px;
-      margin: 20px auto;
-      width: 80%;
+      box-sizing: border-box;
+      text-align: center;
     }
 
     h1 {
       font-size: 2em;
       color: #023653;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .input-box {
-      background-color: #ffffff;
-      padding: 20px;
-      width: 350px;
-      margin-top: 20px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      border-radius: 15px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .input-box label,
+    .input-box input,
+    .input-box button {
+      width: 100%;
+      margin: 5px 0;
+      box-sizing: border-box;
     }
 
     .input-box input {
-      padding: 8px;
-      width: 100%;
-      margin-bottom: 10px;
+      padding: 15px;
       border-radius: 5px;
       border: 1px solid #ddd;
+      font-size: 1em;
+      width: 100%;
     }
 
     .input-box button {
       background-color: #03566d;
       color: white;
-      padding: 10px 20px;
+      padding: 15px 20px;
       border-radius: 5px;
       border: none;
       cursor: pointer;
-      font-size: 1em;
+      font-size: 1.2em;
       transition: background-color 0.3s;
     }
 
     .input-box button:hover {
       background-color: #023653;
-    }
-
-    .results-box {
-      margin-top: 20px;
-      padding: 15px;
-      background-color: #f9f9f9;
-      border-radius: 10px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-      width: 350px;
-      text-align: center;
-    }
-
-    .results-box h4 {
-      margin: 5px 0;
-      padding: 5px;
-      font-size: 1.1em;
     }
 
     footer {
@@ -132,10 +124,27 @@
       text-align: center;
       color: black;
       border-radius: 10px;
+      width: 100%;
+      margin-top: 20px;
     }
 
     footer i {
       color: black;
+    }
+
+    .home-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #03566d;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    .home-btn:hover {
+      background-color: #023653;
     }
   </style>
 </head>
@@ -143,16 +152,16 @@
 <body>
 
   <header>
-    <div class="Logo">Factorial Calculator</div>
+    <div class="Logo">Welcome to My Website</div>
   </header>
 
   <nav class="nav_menu">
     <a href="index.html"><i class="fa fa-fw fa-home" style="color: black;"></i> Home</a>
     <a href="conversion.html">Conversion</a>
     <a href="tax.html">Income Tax</a>
-    <a class="active" href="factorial.html">Factorial Calculator</a>
+    <a href="factorial.html" class="active">Factorial Calculator</a>
     <a href="payroll.html">Simple Payroll</a>
-    <a href="about.html" class="split">About</a>
+    <a href="about.html">About</a>
   </nav>
 
   <main>
@@ -160,15 +169,20 @@
 
     <div class="input-box">
       <label for="nth">Enter a number:</label>
-      <input type="text" id="nth" placeholder="Enter the value">
+      <input type="number" id="nth" placeholder="Enter the value">
       <button id="btn" onclick="calculate()">Calculate</button>
     </div>
 
-    <div class="results-box">
-      <h4 id="Fresult"></h4>
-      <h4 id="Sresult"></h4>
-      <h4 id="Aresult"></h4>
+    <div id="result" style="display:none;">
+      <h3>Results:</h3>
+      <p id="factorialResult"></p>
+      <p id="sumResult"></p>
+      <p id="averageResult"></p>
     </div>
+
+    <a href="index.html" class="home-btn">
+      <i class="fa fa-home"></i> Go to Home Page
+    </a>
   </main>
 
   <footer>
@@ -178,21 +192,23 @@
 
   <script>
     function calculate() {
-      const x = parseFloat(document.getElementById("nth").value);
+      const x = parseInt(document.getElementById("nth").value);
 
-      if (isNaN(x)) {
-        alert("Please enter a valid number.");
+      if (isNaN(x) || x <= 0) {
+        alert("Please enter a valid positive number.");
         return;
       }
 
       const factorial = getFactorial(x);
-      document.getElementById("Fresult").innerText = `Factorial: ${factorial}`;
+      document.getElementById("factorialResult").innerText = `Factorial: ${factorial}`;
 
       const sum = getSum(x);
-      document.getElementById("Sresult").innerText = `Sum: ${sum}`;
+      document.getElementById("sumResult").innerText = `Sum: ${sum}`;
 
       const avg = sum / x;
-      document.getElementById("Aresult").innerText = `Average: ${avg.toFixed(2)}`;
+      document.getElementById("averageResult").innerText = `Average: ${avg.toFixed(2)}`;
+
+      document.getElementById("result").style.display = 'block';
     }
 
     function getFactorial(num) {

@@ -7,51 +7,43 @@
   <title>Factorial Calculator</title>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Night+Pumpkin&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
-    /* Base styles */
     body {
       margin: 0;
       padding: 0;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
       font-family: 'Night Pumpkin', sans-serif;
-      background-color: white;
-      color: black;
-    }
-
-    header, footer {
-      background-color: #d6aad6;
-      padding: 10px;
-      text-align: center;
-      border-radius: 10px;
-    }
-
-    footer i {
+      background-color: turquoise;
       color: black;
     }
 
     .Logo {
+      background-color: turquoise;
+      padding: 10px;
+      text-align: center;
+      color: black;
+      font-family: 'Night Pumpkin', sans-serif;
       font-size: 2.5em;
-      letter-spacing: 7px;
+      margin: 0;
       text-transform: uppercase;
-      font-weight: bold;
+      letter-spacing: 7px;
+      border-radius: 10px;
     }
 
-    /* Navigation Menu */
     .nav_menu {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 20px;
       padding: 10px;
-      background-color: #d6aad6;
+      background-color: turquoise;
       border-radius: 15px;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     }
 
     .nav_menu a {
-      padding: 8px 18px;
+      padding: 10px 20px;
       text-decoration: none;
       color: black;
       border-radius: 10px;
@@ -68,26 +60,26 @@
       background-color: #03566d;
     }
 
-    /* Main Content */
     main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       padding: 20px;
+      text-align: center;
+      font-size: 1.2em;
       background-color: white;
       color: black;
       border-radius: 15px;
+      margin: 20px auto;
+      width: 80%;
     }
 
     h1 {
       font-size: 2em;
+      color: #023653;
+      margin-bottom: 15px;
     }
 
-    /* Input Box */
     .input-box {
       background-color: #ffffff;
-      padding: 15px;
+      padding: 20px;
       width: 350px;
       margin-top: 20px;
       text-align: center;
@@ -118,7 +110,6 @@
       background-color: #023653;
     }
 
-    /* Results Box */
     .results-box {
       margin-top: 20px;
       padding: 15px;
@@ -126,6 +117,7 @@
       border-radius: 10px;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
       width: 350px;
+      text-align: center;
     }
 
     .results-box h4 {
@@ -134,23 +126,26 @@
       font-size: 1.1em;
     }
 
-    /* Footer */
-    footer p {
-      font-size: 1.2em;
-      margin: 0;
+    footer {
+      background-color: turquoise;
+      padding: 10px 0;
+      text-align: center;
+      color: black;
+      border-radius: 10px;
+    }
+
+    footer i {
+      color: black;
     }
   </style>
-
 </head>
 
 <body>
 
-  <!-- Header Section -->
   <header>
     <div class="Logo">Factorial Calculator</div>
   </header>
 
-  <!-- Navigation Menu -->
   <nav class="nav_menu">
     <a href="index.html"><i class="fa fa-fw fa-home" style="color: black;"></i> Home</a>
     <a href="conversion.html">Conversion</a>
@@ -160,18 +155,15 @@
     <a href="about.html" class="split">About</a>
   </nav>
 
-  <!-- Main Content -->
   <main>
     <h1>Factorial Calculator</h1>
 
-    <!-- Input Form -->
     <div class="input-box">
       <label for="nth">Enter a number:</label>
       <input type="text" id="nth" placeholder="Enter the value">
       <button id="btn" onclick="calculate()">Calculate</button>
     </div>
 
-    <!-- Results Box -->
     <div class="results-box">
       <h4 id="Fresult"></h4>
       <h4 id="Sresult"></h4>
@@ -179,15 +171,12 @@
     </div>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>@Jbalsa</p>
     <i class="fa fa-fw fa-facebook"></i>
   </footer>
 
-  <!-- JavaScript -->
   <script>
-    // Factorial, Sum and Average calculation
     function calculate() {
       const x = parseFloat(document.getElementById("nth").value);
 
@@ -196,20 +185,16 @@
         return;
       }
 
-      // Calculate Factorial
       const factorial = getFactorial(x);
       document.getElementById("Fresult").innerText = `Factorial: ${factorial}`;
 
-      // Calculate Sum
       const sum = getSum(x);
       document.getElementById("Sresult").innerText = `Sum: ${sum}`;
 
-      // Calculate Average
       const avg = sum / x;
       document.getElementById("Aresult").innerText = `Average: ${avg.toFixed(2)}`;
     }
 
-    // Function to get Factorial
     function getFactorial(num) {
       let result = 1;
       for (let i = 1; i <= num; i++) {
@@ -218,7 +203,6 @@
       return result;
     }
 
-    // Function to get Sum of numbers
     function getSum(num) {
       let total = 0;
       for (let i = 1; i <= num; i++) {

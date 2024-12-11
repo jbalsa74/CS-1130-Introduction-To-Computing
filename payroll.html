@@ -2,220 +2,333 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Payroll Calculator</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Night+Pumpkin&display=swap">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Night Pumpkin', sans-serif;
-            background-color: white;
-            color: black;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WELCOME TO MY WEBSITE</title>
 
-        .Logo {
-            background-color: #d6aad6;
-            padding: 10px;
-            text-align: center;
-            color: black;
-            font-family: 'Night Pumpkin', sans-serif;
-            font-size: 2.5em;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 7px;
-            border-radius: 10px;
-        }
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Night+Pumpkin&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        .nav_menu {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #d6aad6;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            padding: 10px;
-            gap: 20px;
-        }
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Night Pumpkin', sans-serif;
+      background-color: #40E0D0;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
 
-        .nav_menu a {
-            display: block;
-            color: black;
-            text-align: center;
-            text-decoration: none;
-            font-family: "Open Sans", sans-serif;
-            padding: 10px 20px;
-            border-radius: 10px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+    .Logo {
+      background-color: #40E0D0;
+      padding: 10px;
+      text-align: center;
+      color: black;
+      font-size: 2.5em;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 7px;
+      border-radius: 10px;
+    }
 
-        .nav_menu a:hover {
-            background-color: rgba(255, 255, 255, 0.5);
-            color: black;
-        }
+    .nav_menu {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+      background-color: #40E0D0;
+      border-radius: 15px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+    }
 
-        .nav_menu a.split {
-            background-color: #000;
-            color: white;
-        }
+    .nav_menu a {
+      padding: 10px 20px;
+      text-decoration: none;
+      color: black;
+      border-radius: 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
 
-        .nav_menu a.split:hover {
-            background-color: rgba(255, 255, 255, 0.5);
-        }
+    .nav_menu a:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
 
-        .nav_menu a.active {
-            color: #bfddf1;
-            font-weight: bold;
-        }
+    .nav_menu a.active {
+      color: #bfddf1;
+      font-weight: bold;
+      background-color: #03566d;
+    }
 
-        .active {
-            background-color: #03566d;
-        }
+    .container {
+      width: 100%;
+      max-width: 800px;
+      padding: 30px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin: 0 10px;
+    }
 
-        main {
-            flex: 1;
-            padding: 20px;
-            text-align: center;
-            font-size: 1.2em;
-            background-color: white;
-            color: black;
-            border-radius: 15px;
-        }
+    h1 {
+      font-size: 1.8em;
+      color: #023653;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
 
-        footer {
-            background-color: #d6aad6;
-            padding: 10px 0;
-            text-align: center;
-            color: black;
-            border-radius: 10px;
-        }
+    .form-group {
+      margin-bottom: 20px;
+    }
 
-        footer i {
-            color: black;
-        }
+    label {
+      font-size: 1.1em;
+      color: #03566d;
+    }
 
-        .payroll-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-            width: 50%;
-            margin: 0 auto;
-        }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 8px;
+    }
 
-        .payroll-form input,
-        .payroll-form button {
-            padding: 10px;
-            margin: 10px;
-            width: 80%;
-            font-size: 1em;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 1.2em;
+      background-color: #03566d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
 
-        .payroll-form button {
-            background-color: #03566d;
-            color: white;
-            cursor: pointer;
-        }
+    button:hover {
+      background-color: #023653;
+    }
 
-        .payroll-form button:hover {
-            background-color: #023653;
-        }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
 
-        .payroll-result {
-            margin-top: 20px;
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-            width: 50%;
-            margin: 0 auto;
-            display: none;
-        }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
 
-        .payroll-result p {
-            font-size: 1.1em;
-            margin: 5px 0;
-        }
+    th, td {
+      padding: 12px;
+      text-align: center;
+    }
 
-        .payroll-result span {
-            font-weight: bold;
-        }
-    </style>
+    th {
+      background-color: #40E0D0;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      color: #023653;
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    footer {
+      background-color: #40E0D0;
+      padding: 10px 0;
+      text-align: center;
+      color: black;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .home-btn {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 1.5em;
+      color: #03566d;
+      text-decoration: none;
+      background-color: #fff;
+      border: 2px solid #03566d;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .home-btn:hover {
+      background-color: #03566d;
+      color: white;
+    }
+  </style>
 </head>
 
 <body>
 
-    <div class="Logo">
-        <h2>Simple Payroll Calculator</h2>
+  <div class="Logo">WELCOME TO MY WEBSITE</div>
+
+  <div class="nav_menu">
+    <a href="index.html"><i class="fa fa-fw fa-home" style="color: black;"></i> Home</a>
+    <a href="conversion.html">Conversion</a>
+    <a href="tax.html">Income Tax</a>
+    <a href="factorial.html">Factorial Calculator</a>
+    <a href="payroll.html" class="active">Simple Payroll</a>
+    <a href="about.html">About</a>
+  </div>
+
+  <div class="container">
+    <h1>Simple Payroll Calculator</h1>
+    <form id="payrollForm">
+      <div class="form-group">
+        <label for="empName">Employee Name:</label>
+        <input type="text" id="empName" name="empName" required>
+      </div>
+      <div class="form-group">
+        <label for="daysWorked">Days Worked:</label>
+        <input type="number" id="daysWorked" name="daysWorked" required>
+      </div>
+      <div class="form-group">
+        <label for="dailyRate">Daily Rate:</label>
+        <input type="number" id="dailyRate" name="dailyRate" required>
+      </div>
+      <div class="form-group">
+        <label for="deductions">Deduction Amount:</label>
+        <input type="number" id="deductions" name="deductions" required>
+      </div>
+      <button type="button" onclick="addEmployee()">Add Employee</button>
+    </form>
+
+    <table id="employeeTable">
+      <thead>
+        <tr>
+          <th>Employee No.</th>
+          <th>Employee Name</th>
+          <th>Days Worked</th>
+          <th>Daily Rate</th>
+          <th>Gross Pay</th>
+          <th>Deductions</th>
+          <th>Net Pay</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+    <div class="form-group">
+      <label for="empNoDelete">Select Employee No. to Delete:</label>
+      <select id="empNoDelete">
+      </select>
+      <button type="button" onclick="deleteEmployee()">Delete Employee</button>
+      <button type="button" onclick="clearList()">Clear List</button>
     </div>
 
-    <div class="nav_menu">
-        <a href="index.html">Home</a>
-        <a href="conversion.html">Conversion</a>
-        <a href="tax.html">Income Tax</a>
-        <a href="factorial.html">Factorial Calculator</a>
-        <a href="payroll.html" class="active">Payroll</a>
-        <a href="about.html" class="split">About</a>
-    </div>
+    <a href="index.html" class="home-btn">
+      <i class="fa fa-home"></i> Go to Home
+    </a>
+  </div>
 
-    <main>
-        <div class="payroll-form">
-            <h3>Enter Payroll Details</h3>
-            <form id="payrollForm" onsubmit="return calculatePayroll(event)">
-                <input type="number" id="hoursWorked" placeholder="Enter Total Hours Worked" required min="0">
-                <input type="number" id="hourlyRate" placeholder="Enter Hourly Rate (in PHP)" required min="0">
-                <input type="number" id="deduction" placeholder="Enter Deduction (in PHP)" required min="0">
-                <button type="submit">Calculate Payroll</button>
-            </form>
+  <footer>
+    <p>@Jbalsa</p>
+  </footer>
 
-            <div id="payrollResult" class="payroll-result">
-                <p><span>Total Hours Worked:</span> <span id="displayHoursWorked"></span> hours</p>
-                <p><span>Hourly Rate:</span> ₱<span id="displayHourlyRate"></span></p>
-                <p><span>Gross Salary:</span> ₱<span id="displayGrossSalary"></span></p>
-                <p><span>Deductions:</span> ₱<span id="displayDeduction"></span></p>
-                <p><span>Net Salary (After Deductions):</span> ₱<span id="displayNetSalary"></span></p>
-            </div>
-        </div>
-    </main>
+  <script>
+    let employeeList = [];
+    let employeeNo = 1;
 
-    <footer>
-        <p>@Jbalsa</p>
-        <i class="fa fa-fw fa-facebook"></i>
-    </footer>
+    function addEmployee() {
+      const name = document.getElementById('empName').value;
+      const daysWorked = parseFloat(document.getElementById('daysWorked').value);
+      const dailyRate = parseFloat(document.getElementById('dailyRate').value);
+      const deductions = parseFloat(document.getElementById('deductions').value);
 
-    <script>
-        function calculatePayroll(event) {
-            event.preventDefault();
+      if (name && !isNaN(daysWorked) && !isNaN(dailyRate) && !isNaN(deductions)) {
+        const grossPay = daysWorked * dailyRate;
+        const netPay = grossPay - deductions;
 
-            let hoursWorked = parseFloat(document.getElementById('hoursWorked').value);
-            let hourlyRate = parseFloat(document.getElementById('hourlyRate').value);
-            let deduction = parseFloat(document.getElementById('deduction').value);
+        employeeList.push({
+          empNo: employeeNo,
+          name: name,
+          daysWorked: daysWorked,
+          dailyRate: dailyRate,
+          grossPay: grossPay,
+          deductions: deductions,
+          netPay: netPay
+        });
 
-            if (hoursWorked < 0 || hourlyRate < 0 || deduction < 0) {
-                alert("All values must be positive numbers.");
-                return;
-            }
+        employeeNo++;
 
-            let grossSalary = hoursWorked * hourlyRate;
-            let netSalary = grossSalary - deduction;
+        updateTable();
+        updateEmployeeSelect();
+        resetForm();
+      } else {
+        alert("Please fill all fields correctly.");
+      }
+    }
 
-            document.getElementById('displayHoursWorked').textContent = hoursWorked.toFixed(2);
-            document.getElementById('displayHourlyRate').textContent = hourlyRate.toFixed(2);
-            document.getElementById('displayGrossSalary').textContent = grossSalary.toFixed(2);
-            document.getElementById('displayDeduction').textContent = deduction.toFixed(2);
-            document.getElementById('displayNetSalary').textContent = netSalary.toFixed(2);
+    function updateTable() {
+      const tableBody = document.querySelector('#employeeTable tbody');
+      tableBody.innerHTML = '';
 
-            document.getElementById('payrollResult').style.display = 'block';
-        }
-    </script>
+      employeeList.forEach(employee => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${employee.empNo}</td>
+          <td>${employee.name}</td>
+          <td>${employee.daysWorked}</td>
+          <td>${employee.dailyRate.toFixed(2)}</td>
+          <td>${employee.grossPay.toFixed(2)}</td>
+          <td>${employee.deductions.toFixed(2)}</td>
+          <td>${employee.netPay.toFixed(2)}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    function updateEmployeeSelect() {
+      const empNoDeleteSelect = document.getElementById('empNoDelete');
+      empNoDeleteSelect.innerHTML = '';
+
+      employeeList.forEach(employee => {
+        const option = document.createElement('option');
+        option.value = employee.empNo;
+        option.textContent = employee.empNo;
+        empNoDeleteSelect.appendChild(option);
+      });
+    }
+
+    function deleteEmployee() {
+      const empNoDelete = parseInt(document.getElementById('empNoDelete').value);
+      if (!isNaN(empNoDelete)) {
+        employeeList = employeeList.filter(employee => employee.empNo !== empNoDelete);
+        updateTable();
+        updateEmployeeSelect();
+      } else {
+        alert("Please select a valid Employee No.");
+      }
+    }
+
+    function clearList() {
+      employeeList = [];
+      updateTable();
+      updateEmployeeSelect();
+    }
+
+    function resetForm() {
+      document.getElementById('payrollForm').reset();
+    }
+  </script>
+
 </body>
 
 </html>

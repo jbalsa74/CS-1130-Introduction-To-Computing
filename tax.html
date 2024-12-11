@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Income Tax Calculator (Philippines)</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Night+Pumpkin&display=swap">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Night Pumpkin', sans-serif;
+      background-color: white;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 60%;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.8em;
+      color: #023653;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 1.1em;
+      color: #03566d;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 8px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 1.2em;
+      background-color: #03566d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #023653;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #d6aad6;
+      border-radius: 8px;
+      color: #023653;
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    .result span {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Income Tax Calculator (Philippines)</h1>
+    <form id="incomeTaxForm">
+      <div class="form-group">
+        <label for="income">Enter Your Annual Income (₱):</label>
+        <input type="number" id="income" name="income" required>
+      </div>
+      <button type="button" onclick="calculateTax()">Calculate Tax</button>
+    </form>
+
+    <div id="result" class="result" style="display: none;">
+      <p id="taxMessage"></p>
+    </div>
+  </div>
+
+  <script>
+    function calculateTax() {
+      const income = parseFloat(document.getElementById('income').value);
+
+      if (income <= 0 || isNaN(income)) {
+        alert("Please enter a valid, positive income.");
+        return;
+      }
+
+      let tax = 0;
+      let taxMessage = '';
+
+      if (income <= 250000) {
+        taxMessage = `Your income is ₱${income.toLocaleString('en-PH')}. You don't pay any tax.`;
+      } else {
+        if (income <= 400000) {
+          tax = (income - 250000) * 0.2;
+        } else if (income <= 800000) {
+          tax = (income - 400000) * 0.25 + 30000;
+        } else if (income <= 2000000) {
+          tax = (income - 800000) * 0.3 + 130000;
+        } else if (income <= 8000000) {
+          tax = (income - 2000000) * 0.32 + 490000;
+        } else {
+          tax = (income - 8000000) * 0.35 + 2410000;
+        }
+
+        const formattedTax = tax.toLocaleString('en-PH', { style: 'currency', currency: 'PHP' });
+        taxMessage = `Your income is ₱${income.toLocaleString('en-PH')}. Tax to pay: ${formattedTax}`;
+      }
+
+      document.getElementById('taxMessage').innerHTML = taxMessage;
+      document.getElementById('result').style.display = 'block';
+    }
+  </script>
+
+</body>
+
+</html>

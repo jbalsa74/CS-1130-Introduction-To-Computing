@@ -4,38 +4,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Income Tax Calculator (Philippines)</title>
+  <title>Income Tax Calculator</title>
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Night+Pumpkin&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Night Pumpkin', sans-serif;
-      background-color: white;
+      background-color: #40E0D0;
       color: black;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    .Logo {
+      background-color: #40E0D0;
+      padding: 10px;
+      text-align: center;
+      color: black;
+      font-size: 2.5em;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 7px;
+      border-radius: 10px;
+    }
+
+    .nav_menu {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+      background-color: #40E0D0;
+      border-radius: 15px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+    }
+
+    .nav_menu a {
+      padding: 10px 20px;
+      text-decoration: none;
+      color: black;
+      border-radius: 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav_menu a:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .nav_menu a.active {
+      color: #bfddf1;
+      font-weight: bold;
+      background-color: #03566d;
     }
 
     .container {
-      width: 60%;
-      max-width: 600px;
-      margin: 20px auto;
-      padding: 20px;
+      width: 100%;
+      max-width: 800px; /* Set a max-width to prevent it from stretching too wide on large screens */
+      padding: 30px;
       border-radius: 10px;
-      background-color: #f9f9f9;
+      background-color: #ffffff;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin: 0 10px; /* Ensure there is space on both sides */
     }
 
     h1 {
-      text-align: center;
       font-size: 1.8em;
       color: #023653;
+      margin-bottom: 20px;
     }
 
     .form-group {
@@ -75,26 +119,60 @@
     .result {
       margin-top: 20px;
       padding: 15px;
-      background-color: #d6aad6;
+      background-color: #f9f9f9;
       border-radius: 8px;
       color: #023653;
       text-align: center;
       font-size: 1.2em;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
 
-    .result span {
-      font-weight: bold;
+    footer {
+      background-color: #40E0D0;
+      padding: 10px 0;
+      text-align: center;
+      color: black;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .home-btn {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 1.5em;
+      color: #03566d;
+      text-decoration: none;
+      background-color: #fff;
+      border: 2px solid #03566d;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .home-btn:hover {
+      background-color: #03566d;
+      color: white;
     }
   </style>
 </head>
 
 <body>
 
+  <div class="Logo">Income Tax Calculator</div>
+
+  <div class="nav_menu">
+    <a href="index.html"><i class="fa fa-fw fa-home" style="color: black;"></i> Home</a>
+    <a href="conversion.html">Conversion</a>
+    <a href="tax.html" class="active">Income Tax</a>
+    <a href="factorial.html">Factorial Calculator</a>
+    <a href="payroll.html">Simple Payroll</a>
+    <a href="about.html">About</a>
+  </div>
+
   <div class="container">
-    <h1>Income Tax Calculator (Philippines)</h1>
+    <h1>Income Tax Calculator</h1>
     <form id="incomeTaxForm">
       <div class="form-group">
-        <label for="income">Enter Your Annual Income (₱):</label>
+        <label for="income">Enter Your Annual Income:</label>
         <input type="number" id="income" name="income" required>
       </div>
       <button type="button" onclick="calculateTax()">Calculate Tax</button>
@@ -103,7 +181,15 @@
     <div id="result" class="result" style="display: none;">
       <p id="taxMessage"></p>
     </div>
+
+    <a href="index.html" class="home-btn">
+      <i class="fa fa-home"></i> Go to Home
+    </a>
   </div>
+
+  <footer>
+    <p>@Jbalsa</p>
+  </footer>
 
   <script>
     function calculateTax() {
@@ -118,7 +204,7 @@
       let taxMessage = '';
 
       if (income <= 250000) {
-        taxMessage = `Your income is ₱${income.toLocaleString('en-PH')}. You don't pay any tax.`;
+        taxMessage = `Your income is ${income.toLocaleString()}. You don't pay any tax.`;
       } else {
         if (income <= 400000) {
           tax = (income - 250000) * 0.2;
@@ -132,8 +218,7 @@
           tax = (income - 8000000) * 0.35 + 2410000;
         }
 
-        const formattedTax = tax.toLocaleString('en-PH', { style: 'currency', currency: 'PHP' });
-        taxMessage = `Your income is ₱${income.toLocaleString('en-PH')}. Tax to pay: ${formattedTax}`;
+        taxMessage = `Your income is ${income.toLocaleString()}. Tax to pay: ${tax.toLocaleString()}`;
       }
 
       document.getElementById('taxMessage').innerHTML = taxMessage;

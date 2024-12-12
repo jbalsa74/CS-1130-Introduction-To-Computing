@@ -4,114 +4,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Calculator.io</title>    
+  <title>Income Tax Calculator - My Website</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Night+Pumpkin&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
   <style>
-    /* CSS styles for the layout */
     body {
       margin: 0;
       padding: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      height: 890px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Night Pumpkin', sans-serif;
+      background-color: turquoise;
+      color: black;
     }
 
-    /* Media queries for different screen sizes */
-    @media (max-width: 600px) {
-      header,
-      main,
-      footer {
-        padding: 10px;
-      }
-    }
-
-    @media (min-width: 601px) and (max-width: 1200px) {
-      header,
-      main,
-      footer {
-        padding: 15px;
-      }
-    }
-
-    @media (min-width: 1201px) {
-      header,
-      main,
-      footer {
-        padding: 20px;
-      }
-    }
-
-    /* Header */
     .Logo {
-      background-color: #bde4ed;
+      background-color: turquoise;
       padding: 10px;
       text-align: center;
-      color: #023653;
-      font-family: 'Montserrat', sans-serif;
-      font-size: .5em;
+      color: black;
+      font-family: 'Night Pumpkin', sans-serif;
+      font-size: 2.5em;
       margin: 0;
       text-transform: uppercase;
       letter-spacing: 7px;
-    }
-
-    /* CSS property for navigation menu */
-    .nav_menu2 {
-      height: 50px;
-      background-color: #ffffff;
+      border-radius: 10px;
     }
 
     .nav_menu {
-      overflow: hidden;
-      background-color: #bde4ed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: turquoise;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-      border-radius: 5px;
+      border-radius: 15px;
+      padding: 10px;
+      gap: 20px;
     }
 
     .nav_menu a {
-      float: left;
       display: block;
-      color: #023653;
+      color: black;
       text-align: center;
-      padding: 14px 16px;
       text-decoration: none;
       font-family: "Open Sans", sans-serif;
+      padding: 10px 20px;
+      border-radius: 10px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .nav_menu a:hover {
-      background-color: rgba(255, 255, 255, 0.458);
-      color: #023653;
+      background-color: rgba(255, 255, 255, 0.5);
+      color: black;
     }
 
     .nav_menu a.split {
-      float: right;
-      background-color:  #03566d;
+      background-color: #000;
       color: white;
     }
 
     .nav_menu a.split:hover {
-      background-color: rgba(255, 255, 255, 0.458);
-    }
-
-    .active {
-      background-color: #03566d;
+      background-color: rgba(255, 255, 255, 0.5);
     }
 
     .nav_menu a.active {
       color: #bfddf1;
+      font-weight: bold;
     }
 
-
-    /* Main content */
     main {
       flex: 1;
       padding: 20px;
       text-align: center;
       font-size: 1.2em;
-      color:#023653;
+      background-color: white;
+      color: black;
+      border-radius: 15px;
     }
 
+    footer {
+      background-color: turquoise;
+      padding: 10px 0;
+      text-align: center;
+      color: black;
+      border-radius: 10px;
+    }
+
+    footer p {
+      color: black;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .transparent-box {
+      background-color: white;
+      padding: 20px;
+      width: 50%;
+      margin: auto;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+    }
 
     #btn {
       background-color: #03566d;
@@ -127,151 +119,104 @@
       background-color: #023653;
     }
 
-   
-
-    footer {
-      background-color: #bde4ed;
-      padding: 10px;
-      min-height: .5vh;
-      text-align: center;
-      font-family: montserrat, san-serif;
-      color: #023653; /* Change the color of the footer text */
-  }
-
-  footer i {
-    color: #023653; /* Change the color of the footer icons */
-  }
-    
- 
-    /* CSS styles for the calculator */
-    .transparent-box {
-      background-color: #ffffff;
-      padding: 10px;
-      width: 50%;
-      margin: auto;
-      text-align: center;
-      box-shadow: 0 0 10px   rgba(0, 0, 0, 0.5);
-      /*border: 1px solid black; /* Added box outline */
+    h1, .transparent-box p {
+      color: black;
     }
 
-    </style>
-  
-  </head>
-  <body>
-    
-    
-    <div class="Logo"><h2>Calculator.io</h2></div>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    .home-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 1.2em;
+      text-decoration: none;
+      color: #03566d;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: 2px solid #03566d;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-    <div class="nav_menu">
-        <a href="index.html"><i class="fa fa-fw fa-home"></i></a>
-        <a href="conversion.html">Conversion</a>
-        <a class="active" href="tax.html">Income Tax</a>
-        <a href="factorial.html">Finding Nth Factorial</a>
-        <a href="payroll.html">Simple Payroll</a>
-        <a href="about.html" class="split">About</a>
+    .home-link:hover {
+      background-color: #03566d;
+      color: white;
+    }
+
+    .calc-instruction {
+      color: black;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="Logo"><h2>WELCOME TO MY WEBSITE</h2></div>
+  </header>
+
+  <nav class="nav_menu">
+    <a href="index.html" class="active"><i class="fa fa-fw fa-home" style="color: white;"></i></a>
+    <a href="conversion.html">Conversion</a>
+    <a href="tax.html">Income Tax</a>
+    <a href="factorial.html">Factorial Calculator</a>
+    <a href="payroll.html">Simple Payroll</a>
+    <a href="about.html" class="split">About</a>
+  </nav>
+
+  <main>
+    <br><br>
+    <p class="calc-instruction">Calculate your income tax</p>
+    <label for="taxs">Input your taxable income: </label>
+    <input type="text" id="taxs" placeholder="Enter the value">
+    <button id="btn" onclick="calc()">Calculate</button>
+    <br><br>
+
+    <div class="transparent-box">
+      <h2 id="result"></h2>
     </div>
 
-   
-    <main>
-        <h1>Income tax calculator</h1>
-        <br><br>
-        <div class="transparent-box">  
-            
-            <p>Calculate your income tax</p>
+    <a href="index.html" class="home-link">Go to Home Page</a>
+  </main>
 
-            <label class="lab" for="taxs">Input your taxable income: </label>
-            <input class="ent" type="text" id="taxs" placeholder="Enter the value">
-            <button id="btn" onclick="calc()">Calculate</button>
-            <br><br>
-          </div> <!-- Add closing tag for the inner div -->
+  <footer>
+    <p>@Jbalsa</p>
+  </footer>
 
-          <div class="transparent-box">
-            <h2 id="result"></h2> <!-- Correct closing tag for the h2 element -->
-          </div>
-    
-    </main>
-
-    <footer>
-      <p>@mokichino</p>
-      <i class="fa fa-fw fa-facebook"></i>
-      <i class="fa fa-fw fa-instagram"></i>
-      <i class="fa fa-fw fa-twitter"></i>
-      <i class="fa fa-fw fa-github"></i>
-    </footer>
-  </body>
-
-  
   <script>
+    function calc() {
+      var rate;
+      var tax = parseFloat(document.getElementById("taxs").value);
 
-    let lastScrollTop = 0;
-
-    window.addEventListener('scroll', function () {
-      const st = window.pageYOffset || document.documentElement.scrollTop;
-
-      if (st > lastScrollTop) {
-        // Scroll down, hide header with ease-in animation
-        document.querySelector('.Logo').classList.add('hide-header');
-        document.querySelector('.nav_menu').style.transform = 'translateY(-100%)';
-        document.querySelector('.nav_menu2').style.transform = 'translateY(-100%)';
-        document.querySelector('.Logo').style.transition = 'transform 0.8s ease-in';
-        document.querySelector('.nav_menu').style.transition = 'transform 0.8s ease-in';
-        document.querySelector('.nav_menu2').style.transition = 'transform 0.8s ease-in';
-      } else {
-        // Scroll up, show header with ease-in animation
-        document.querySelector('.Logo').classList.remove('hide-header');
-        document.querySelector('.nav_menu').style.transform = 'translateY(0)';
-        document.querySelector('.nav_menu2').style.transform = 'translateY(0)';
-        document.querySelector('.Logo').style.transition = 'transform 0.8s ease-out';
-        document.querySelector('.nav_menu').style.transition = 'transform 0.8s ease-out';
-        document.querySelector('.nav_menu2').style.transition = 'transform 0.8s ease-out';
+      if (isNaN(tax)) {
+        alert("Please enter a valid number for taxable income.");
+        return;
       }
 
-      lastScrollTop = st;
-    });
-
-
-    function calc() {
-        var rate;
-        var tax = parseFloat(document.getElementById("taxs").value);
-
-        console.log("1. Passed here.");
-
-        if (isNaN(tax)) {
-            alert("Please enter a valid number for taxable income.");
-            return;
-        }
-
-        if (tax <= 250000) {
-            document.getElementById("result").innerHTML = "Your Income tax is: 0.00";
-        }
-        else if (tax <= 400000){
-            result = 0 + 0.20 * (tax - 250000);
-            document.getElementById("result").innerHTML = "Your Income Tax: " + result.toFixed(2);
-        }
-        else if (tax <= 800000){
-            rate = 0.25 * (tax - 400000);
-            result = 30000 + rate;
-            document.getElementById("result").innerHTML = "Your Income tax is: " + result.toFixed(2);
-        }
-        else if (tax <= 2000000){
-            rate = 0.30 * (tax - 800000);
-            result = 130000 + rate;
-            document.getElementById("result").innerHTML = "Your Income tax is: " + result.toFixed(2);
-        }
-        else if (tax <= 8000000){
-            rate = 0.32 * (tax - 2000000);
-            result = 490000 + rate
-            document.getElementById("result").innerHTML = "Your Income tax is: " + result.toFixed(2);
-        }
-        else{
-            rate = 0.35 * (tax - 8000000);
-            result = 2410000 + rate
-            document.getElementById("result").innerHTML = "Your Income tax is: " + result.toFixed(2);
-        }
-
-
+      if (tax <= 250000) {
+        document.getElementById("result").innerHTML = "Your Income tax is: 0.00";
+      } else if (tax <= 400000) {
+        result = 0 + 0.20 * (tax - 250000);
+        document.getElementById("result").innerHTML = "Your Income Tax: " + result.toFixed(2);
+      } else if (tax <= 800000) {
+        rate = 0.25 * (tax - 400000);
+        result = 30000 + rate;
+        document.getElementById("result").innerHTML = "Your Income tax is: " + result.toFixed(2);
+      } else if (tax <= 2000000) {
+        rate = 0.30 * (tax - 800000);
+        result = 130000 + rate;
+        document.getElementById("result").innerHTML = "Your Income tax is: " + result.toFixed(2);
+      } else if (tax <= 8000000) {
+        rate = 0.32 * (tax - 2000000);
+        result = 490000 + rate;
+        document.getElementById("result").innerHTML = "Your Income tax is: " + result.toFixed(2);
+      } else {
+        rate = 0.35 * (tax - 8000000);
+        result = 2410000 + rate;
+        document.getElementById("result").innerHTML = "Your Income tax is: " + result.toFixed(2);
+      }
     }
-</script>
+  </script>
 
-  </html>
+</body>
+
+</html>
